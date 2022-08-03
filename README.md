@@ -9,7 +9,7 @@ docker-compose up
 
 ## Run services with MySQL as Database
 ```
-docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
+docker run -e MYSQL_ROOT_PASSWORD=carworkshop -e MYSQL_DATABASE=carworkshop -p 3306:3306 mysql:5.7.8
 ```
 
 To use a MySQL database, you have to start all the microservice with the `mysql` Spring profile. Add the `--spring.profiles.active=mysql` as an argument.
