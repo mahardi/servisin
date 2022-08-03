@@ -16,11 +16,11 @@
 
 	<modules>
         <module>spring-servisin-admin-server</module>
-        <module>spring-servisin-customers-service</module>
-        <module>spring-servisin-vets-service</module>
+        <module>spring-servisin-costumers-service</module>
+        <module>spring-servisin-workshops-service</module>
         <module>spring-servisin-visits-service</module>
         <module>spring-servisin-config-server</module>
-        <module>spring-servisin-discovery-server</module>
+        <module>spring-servisin-discovery-service</module>
         <module>spring-servisin-api-gateway</module>
         <module>spring-servisin-models-library</module>
     </modules>
