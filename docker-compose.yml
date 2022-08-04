@@ -1,0 +1,100 @@
+version: '2'
+
+services:
+  config-server:
+    image: mahardi/spring-servisin-config-server
+    container_name: config-server
+    mem_limit: 512M
+    ports:
+     - 8888:8888
+
+  discovery-service:
+    image: mahardi/spring-servisin-discovery-service
+    container_name: discovery-service
+    mem_limit: 512M
+    depends_on:
+      - config-server
+    entrypoint: ["./dockerize","-wait=tcp://config-server:8888","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+     - 8761:8761
+
+  costumers-service:
+    image: mahardi/spring-servisin-costumers-service
+    container_name: costumers-service
+    mem_limit: 512M
+    depends_on:
+     - config-server
+     - discovery-service
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+    - 8081:8081
+
+  visits-service:
+    image: mahardi/spring-servisin-visits-service
+    container_name: visits-service
+    mem_limit: 512M
+    depends_on:
+     - config-server
+     - discovery-service
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+     - 8082:8082
+
+  workshops-service:
+    image: mahardi/spring-servisin-workshops-service
+    container_name: workshops-service
+    mem_limit: 512M
+    depends_on:
+     - config-server
+     - discovery-service
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+     - 8083:8083
+
+  api-gateway:
+    image: mahardi/spring-servisin-api-gateway
+    container_name: api-gateway
+    mem_limit: 512M
+    depends_on:
+     - config-server
+     - discovery-service
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+     - 8080:8080
+
+  admin-server:
+    image: mahardi/spring-servisin-admin-server
+    container_name: admin-server
+    mem_limit: 512M
+    depends_on:
+     - config-server
+     - discovery-service
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.jarLauncher"]
+    ports:
+     - 9090:9090
+
+  ## Grafana / Prometheus 
+
+  grafana-server:
+    build: ./docker/grafana
+    container_name: grafana-server
+    mem_limit: 256M
+    ports:
+    - 3000:3000
+
+  prometheus-server:
+    build: ./docker/prometheus
+    container_name: prometheus-server
+    mem_limit: 256M
+    ports:
+    - 9091:9090
+
+  ## Zipkin
+  tracing-server:
+    image: openzipkin/zipkin
+    container_name: tracing-server
+    mem_limit: 512M
+    environment:
+    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -Djava.security.egd=file:/dev/./urandom
+    ports:
+     - 9411:9411

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.mahardi.springservisinapigateway.dto.OwnerDetails;
 import io.mahardi.springservisinapigateway.dto.Visits;
-import io.mahardi.springservisinapigateway.service.CustomerServiceClient;
+import io.mahardi.springservisinapigateway.service.CostumerServiceClient;
 import io.mahardi.springservisinapigateway.service.VisitsServiceClient;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @RequestMapping("/api/gateway")
 public class SpringServisinApiGatewayController {
-    @Autowired CustomerServiceClient customersServiceClient;
+    @Autowired CostumerServiceClient costumersServiceClient;
 
     @Autowired VisitsServiceClient visitsServiceClient;
 
@@ -30,7 +30,7 @@ public class SpringServisinApiGatewayController {
 
     @GetMapping(value = "owners/{ownerId}")
     public Mono<OwnerDetails> getOwnerDetails(final @PathVariable int ownerId) {
-        return customersServiceClient.getOwner(ownerId)
+        return costumersServiceClient.getOwner(ownerId)
             .flatMap(owner ->
                 visitsServiceClient.getVisitsForCars(owner.getCarIds())
                     .transform(it -> {

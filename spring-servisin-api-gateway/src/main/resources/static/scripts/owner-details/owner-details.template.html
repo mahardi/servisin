@@ -22,12 +22,12 @@
             <a class="btn btn-default" ui-sref="ownerEdit({ownerId: $ctrl.owner.id})">Edit Owner</a>
         </td>
         <td>
-            <a ui-sref="carNew({ownerId: $ctrl.owner.id})" class="btn btn-default">Add New Pet</a>
+            <a ui-sref="carNew({ownerId: $ctrl.owner.id})" class="btn btn-default">Add New Car</a>
         </td>
     </tr>
 </table>
 
-<h2>Pets and Visits</h2>
+<h2>Cars and Visits</h2>
 
 <table class="table table-striped">
     <tr ng-repeat="car in $ctrl.owner.cars track by car.id">
@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <a ui-sref="carEdit({ownerId: $ctrl.owner.id, carId: car.id})">Edit Pet</a>
+                        <a ui-sref="carEdit({ownerId: $ctrl.owner.id, carId: car.id})">Edit Car</a>
                     </td>
                     <td>
                         <a ui-sref="visits({ownerId: $ctrl.owner.id, carId: car.id})">Add Visit</a>

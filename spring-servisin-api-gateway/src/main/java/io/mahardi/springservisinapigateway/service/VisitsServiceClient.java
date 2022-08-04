@@ -24,7 +24,7 @@ public class VisitsServiceClient {
     public Mono<Visits> getVisitsForCars(final List<Integer> carIds){
         return webClientBuilder.build()
             .get()
-            .uri(hostName + "pets/visits?carIds={carId}", joinIds(carIds))
+            .uri(hostName + "cars/visits?carIds={carId}", joinIds(carIds))
             .retrieve()
             .bodyToMono(Visits.class);
     }
