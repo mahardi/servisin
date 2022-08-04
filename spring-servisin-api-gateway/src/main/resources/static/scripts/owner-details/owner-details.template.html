@@ -36,7 +36,7 @@
                 <dt>Name</dt>
                 <dd><a ui-sref="carEdit({ownerId: $ctrl.owner.id, carId: car.id})">{{car.name}}</a></dd>
                 <dt>Birth Date</dt>
-                <dd>{{car.birthDate | date:'yyyy MMM dd'}}</dd>
+                <dd>{{car.dateOfPurchase | date:'yyyy MMM dd'}}</dd>
                 <dt>Type</dt>
                 <dd>{{car.type.name}}</dd>
             </dl>

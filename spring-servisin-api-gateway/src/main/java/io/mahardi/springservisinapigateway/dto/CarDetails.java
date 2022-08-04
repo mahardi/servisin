@@ -10,7 +10,7 @@ public class CarDetails {
     private int id;
     private String name;
     private String licensePlate;
-    private String year;
+    private String dateOfPurchase;
     private CarType type;
     private final List<VisitDetails> visits = new ArrayList<>();
 }

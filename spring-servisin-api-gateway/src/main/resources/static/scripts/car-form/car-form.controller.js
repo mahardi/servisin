@@ -14,7 +14,7 @@ angular.module('carForm')
             if (carId) { // edit
                 $http.get("api/customer/owners/" + ownerId + "/cars/" + carId).then(function (resp) {
                     self.car = resp.data;
-                    self.car.birthDate = new Date(self.car.birthDate);
+                    self.car.dateOfPurchase = new Date(self.car.dateOfPurchase);
                     self.carTypeId = "" + self.car.type.id;
                 });
             } else {
@@ -34,7 +34,7 @@ angular.module('carForm')
             var data = {
                 id: id,
                 name: self.car.name,
-                birthDate: self.car.birthDate,
+                dateOfPurchase: self.car.dateOfPurchase,
                 typeId: self.carTypeId
             };
 
