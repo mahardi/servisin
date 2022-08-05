@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.mahardi</groupId>
-	<name>spring-servisin-admin-server</name>
 	<artifactId>spring-servisin-admin-server</artifactId>
 	<packaging>jar</packaging>
 	<description>Spring Boot Admin Server for Servisin Microservices</description>
