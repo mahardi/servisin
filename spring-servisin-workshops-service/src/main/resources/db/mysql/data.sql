@@ -6,6 +6,6 @@ INSERT IGNORE INTO specialties VALUES (1, 'Performance Tuning');
 INSERT IGNORE INTO specialties VALUES (2, 'Spooring and Balancing');
 INSERT IGNORE INTO specialties VALUES (3, 'Audio');
 
-INSERT IGNORE INTO vet_specialties VALUES (1, 1);
-INSERT IGNORE INTO vet_specialties VALUES (2, 2);
-INSERT IGNORE INTO vet_specialties VALUES (3, 3);
+INSERT IGNORE INTO workshop_specialties VALUES (1, 1);
+INSERT IGNORE INTO workshop_specialties VALUES (2, 2);
+INSERT IGNORE INTO workshop_specialties VALUES (3, 3);

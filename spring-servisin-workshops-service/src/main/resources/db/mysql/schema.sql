@@ -6,7 +6,7 @@ USE servisin;
 CREATE TABLE IF NOT EXISTS workshops (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30),
-  INDEX(last_name)
+  INDEX(name)
 ) engine=InnoDB;
 
 CREATE TABLE IF NOT EXISTS specialties (
