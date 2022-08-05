@@ -18,7 +18,7 @@
         <module>spring-servisin-config-server</module>
         <module>spring-servisin-admin-server</module>
         <module>spring-servisin-discovery-service</module>
-        <module>spring-servisin-costumers-service</module>
+        <module>spring-servisin-customers-service</module>
         <module>spring-servisin-workshops-service</module>
         <module>spring-servisin-visits-service</module>
         <module>spring-servisin-api-gateway</module>

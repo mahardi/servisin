@@ -1,4 +1,4 @@
-package io.mahardi.springservisincostumersservice.controller;
+package io.mahardi.springservisincustomersservice.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
-import io.mahardi.springservisincostumersservice.helper.CarDetails;
-import io.mahardi.springservisincostumersservice.helper.CarRequest;
-import io.mahardi.springservisincostumersservice.helper.ResourceNotFoundException;
-import io.mahardi.springservisincostumersservice.model.CarType;
-import io.mahardi.springservisincostumersservice.model.Cars;
-import io.mahardi.springservisincostumersservice.model.Owner;
-import io.mahardi.springservisincostumersservice.repository.CarRepository;
-import io.mahardi.springservisincostumersservice.repository.OwnerRepository;
+import io.mahardi.springservisincustomersservice.helper.CarDetails;
+import io.mahardi.springservisincustomersservice.helper.CarRequest;
+import io.mahardi.springservisincustomersservice.helper.ResourceNotFoundException;
+import io.mahardi.springservisincustomersservice.model.CarType;
+import io.mahardi.springservisincustomersservice.model.Cars;
+import io.mahardi.springservisincustomersservice.model.Owner;
+import io.mahardi.springservisincustomersservice.repository.CarRepository;
+import io.mahardi.springservisincustomersservice.repository.OwnerRepository;
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

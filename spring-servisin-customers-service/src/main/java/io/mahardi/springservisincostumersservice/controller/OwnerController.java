@@ -1,4 +1,4 @@
-package io.mahardi.springservisincostumersservice.controller;
+package io.mahardi.springservisincustomersservice.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.mahardi.springservisincostumersservice.helper.ResourceNotFoundException;
-import io.mahardi.springservisincostumersservice.model.Owner;
-import io.mahardi.springservisincostumersservice.repository.OwnerRepository;
+import io.mahardi.springservisincustomersservice.helper.ResourceNotFoundException;
+import io.mahardi.springservisincustomersservice.model.Owner;
+import io.mahardi.springservisincustomersservice.repository.OwnerRepository;
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

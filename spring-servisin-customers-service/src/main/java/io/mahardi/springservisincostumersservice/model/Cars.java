@@ -1,4 +1,4 @@
-package io.mahardi.springservisincostumersservice.model;
+package io.mahardi.springservisincustomersservice.model;
 
 import java.util.Date;
 

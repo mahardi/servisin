@@ -1,11 +1,11 @@
-package io.mahardi.springservisincostumersservice.helper;
+package io.mahardi.springservisincustomersservice.helper;
 
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import io.mahardi.springservisincostumersservice.model.CarType;
-import io.mahardi.springservisincostumersservice.model.Cars;
+import io.mahardi.springservisincustomersservice.model.CarType;
+import io.mahardi.springservisincustomersservice.model.Cars;
 import lombok.Data;
 
 @Data

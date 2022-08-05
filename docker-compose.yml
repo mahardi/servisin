@@ -18,9 +18,9 @@ services:
     ports:
      - 8761:8761
 
-  costumers-service:
-    image: mahardi/spring-servisin-costumers-service
-    container_name: costumers-service
+  customers-service:
+    image: mahardi/spring-servisin-customers-service
+    container_name: customers-service
     mem_limit: 512M
     depends_on:
      - config-server

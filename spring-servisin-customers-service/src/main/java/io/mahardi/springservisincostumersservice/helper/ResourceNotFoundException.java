@@ -1,4 +1,4 @@
-package io.mahardi.springservisincostumersservice.helper;
+package io.mahardi.springservisincustomersservice.helper;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -10,13 +10,13 @@ import reactor.core.publisher.Mono;
 
 @Component
 @RequiredArgsConstructor
-public class CostumerServiceClient {
+public class CustomerServiceClient {
     
     @Autowired WebClient.Builder webClientBuilder;
 
     public Mono<OwnerDetails> getOwner(final int ownerId){
         return webClientBuilder.build().get()
-            .uri("http://costumers-service/owners/{ownerId}", ownerId)
+            .uri("http://customers-service/owners/{ownerId}", ownerId)
             .retrieve()
             .bodyToMono(OwnerDetails.class);
     }

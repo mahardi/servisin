@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.mahardi</groupId>
-	<name>spring-servisin-costumers-service</name>
-	<artifactId>spring-servisin-costumers-service</artifactId>
+	<name>spring-servisin-customers-service</name>
+	<artifactId>spring-servisin-customers-service</artifactId>
 	<packaging>jar</packaging>
-	<description>Spring Boot Costumers Service for Servisin Microservices</description>
+	<description>Spring Boot Customers Service for Servisin Microservices</description>
 
 	<parent>
 		<groupId>io.mahardi</groupId>

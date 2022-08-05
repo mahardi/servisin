@@ -1,4 +1,4 @@
-package io.mahardi.springservisincostumersservice.repository;
+package io.mahardi.springservisincustomersservice.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import io.mahardi.springservisincostumersservice.model.CarType;
-import io.mahardi.springservisincostumersservice.model.Cars;
+import io.mahardi.springservisincustomersservice.model.CarType;
+import io.mahardi.springservisincustomersservice.model.Cars;
 
 public interface CarRepository extends JpaRepository<Cars, Integer> {
     

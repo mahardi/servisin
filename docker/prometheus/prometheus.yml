@@ -16,10 +16,10 @@ scrape_configs:
   static_configs:
   - targets: ['api-gateway:8080']
 
-- job_name: costumers-service
+- job_name: customers-service
   metrics_path: /actuator/prometheus
   static_configs:
-  - targets: ['costumers-service:8081']
+  - targets: ['customers-service:8081']
 
 - job_name: visits-service
   metrics_path: /actuator/prometheus

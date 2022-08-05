@@ -18,10 +18,10 @@ spring:
             - Path=/api/visit/**
           filters:
             - StripPrefix=2
-        - id: costumers-service
-          uri: lb://costumers-service
+        - id: customers-service
+          uri: lb://customers-service
           predicates:
-            - Path=/api/costumer/**
+            - Path=/api/customer/**
           filters:
             - StripPrefix=2
 

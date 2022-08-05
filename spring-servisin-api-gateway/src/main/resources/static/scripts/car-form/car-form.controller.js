@@ -5,20 +5,20 @@ angular.module('carForm')
         var self = this;
         var ownerId = $stateParams.ownerId || 0;
 
-        $http.get('api/costumer/carTypes').then(function (resp) {
+        $http.get('api/customer/carTypes').then(function (resp) {
             self.types = resp.data;
         }).then(function () {
 
             var carId = $stateParams.carId || 0;
 
             if (carId) { // edit
-                $http.get("api/costumer/owners/" + ownerId + "/cars/" + carId).then(function (resp) {
+                $http.get("api/customer/owners/" + ownerId + "/cars/" + carId).then(function (resp) {
                     self.car = resp.data;
                     self.car.dateOfPurchase = new Date(self.car.dateOfPurchase);
                     self.carTypeId = "" + self.car.type.id;
                 });
             } else {
-                $http.get('api/costumer/owners/' + ownerId).then(function (resp) {
+                $http.get('api/customer/owners/' + ownerId).then(function (resp) {
                     self.car = {
                         owner: resp.data.firstName + " " + resp.data.lastName
                     };
@@ -40,9 +40,9 @@ angular.module('carForm')
 
             var req;
             if (id) {
-                req = $http.put("api/costumer/owners/" + ownerId + "/cars/" + id, data);
+                req = $http.put("api/customer/owners/" + ownerId + "/cars/" + id, data);
             } else {
-                req = $http.post("api/costumer/owners/" + ownerId + "/cars", data);
+                req = $http.post("api/customer/owners/" + ownerId + "/cars", data);
             }
 
             req.then(function () {
