@@ -8,8 +8,7 @@
     </thead>
 
     <tr ng-repeat="workshop in $ctrl.workshopList">
-        <td>{{workshopname}}</td>
+        <td>{{workshop.name}}</td>
         <td><span ng-repeat="specialty in workshop.specialties">{{specialty.name + ' '}}</span></td>
-
     </tr>
 </table>
