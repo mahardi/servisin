@@ -1,10 +1,22 @@
 version: '2'
 
 services:
+  db:
+    image: mysql:5.7.8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: servisin
+      MYSQL_DATABASE: servisin
+    volumes:
+      - "./docker/mysql/config/my.conf:/etc/mysql/conf.d/config-file.cnf"
+      - "./docker/mysql/data:/var/lib/mysql:rw"
+
   config-server:
     image: mahardi/spring-servisin-config-server
     container_name: config-server
     mem_limit: 512M
+    depends_on:
+      - db
     ports:
      - 8888:8888
 
@@ -25,7 +37,13 @@ services:
     depends_on:
      - config-server
      - discovery-service
-    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher", "--spring.profiles.active=mysql"]
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher"]
+    environment:
+      spring.datasource.url: "jdbc:mysql://db:3306/servisin?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true"
+      spring.datasource.schema: classpath*:db/mysql/schema.sql
+      spring.datasource.data: classpath*:db/mysql/data.sql
+      spring.datasource.password: servisin
+      spring.jpa.hibernate.ddl-auto: none
     ports:
     - 8081:8081
 
@@ -36,7 +54,13 @@ services:
     depends_on:
      - config-server
      - discovery-service
-    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher", "--spring.profiles.active=mysql"]
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher"]
+    environment:
+      spring.datasource.url: "jdbc:mysql://db:3306/servisin?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true"
+      spring.datasource.schema: classpath*:db/mysql/schema.sql
+      spring.datasource.data: classpath*:db/mysql/data.sql
+      spring.datasource.password: servisin
+      spring.jpa.hibernate.ddl-auto: none
     ports:
      - 8082:8082
 
@@ -47,7 +71,13 @@ services:
     depends_on:
      - config-server
      - discovery-service
-    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher", "--spring.profiles.active=mysql"]
+    entrypoint: ["./dockerize","-wait=tcp://discovery-service:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher"]
+    environment:
+      spring.datasource.url: "jdbc:mysql://db:3306/servisin?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true"
+      spring.datasource.schema: classpath*:db/mysql/schema.sql
+      spring.datasource.data: classpath*:db/mysql/data.sql
+      spring.datasource.password: servisin
+      spring.jpa.hibernate.ddl-auto: none
     ports:
      - 8083:8083
 
