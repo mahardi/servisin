@@ -26,7 +26,7 @@ scrape_configs:
   static_configs:
   - targets: ['visits-service:8082']
 
-- job_name: vets-service
+- job_name: workshops-service
   metrics_path: /actuator/prometheus
   static_configs:
-  - targets: ['vets-service:8083']
+  - targets: ['workshops-service:8083']
