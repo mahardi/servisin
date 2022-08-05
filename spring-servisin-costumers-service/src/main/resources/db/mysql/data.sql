@@ -9,6 +9,6 @@ INSERT IGNORE INTO owners VALUES (1, 'Rama', 'Utama', 'Jl. Poso', 'Jakarta Utara
 INSERT IGNORE INTO owners VALUES (2, 'Romli', 'Anwar', 'Jl. Blitar Raya', 'Jakarta Timur', '628512312');
 INSERT IGNORE INTO owners VALUES (3, 'Bianca', 'Putri', 'Jl. Pulo Ribung', 'Bekasi', '6281431244');
 
-INSERT IGNORE INTO cars VALUES (1, 'Jeep Wrangler', '2010-09-07', 1, 1);
-INSERT IGNORE INTO cars VALUES (2, 'Suzuki Espass', '2012-08-06', 2, 2);
-INSERT IGNORE INTO cars VALUES (3, 'Honda Accord', '2011-04-17', 6, 3);
+INSERT IGNORE INTO cars VALUES (1, 'Jeep Wrangler', 'N1111', '2010-09-07', 1, 1);
+INSERT IGNORE INTO cars VALUES (2, 'Suzuki Espass', 'B123AAA', '2012-08-06', 2, 2);
+INSERT IGNORE INTO cars VALUES (3, 'Honda Accord','B9314RFD', '2011-04-17', 6, 3);
